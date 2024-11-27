@@ -1,0 +1,40 @@
+<div style="background-color: #0A013B; color: white; padding: 20px;">
+    <h2>Diseña Respuestas para Comentarios</h2>
+    <p>Responde a los comentarios de tu audiencia de forma ágil y efectiva, con un toque personal que fomente la interacción y construya una comunidad fuerte.</p>
+    <form id="comment-response-form">
+        <label for="comment">Comentario recibido:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Escribe un comentario aquí..." style="background-color: #FFFFFF; color: #0A013B;"></textarea><br><br>
+
+        <label for="response-type">Tipo de respuesta:</label><br>
+        <select id="response-type" name="response-type" style="background-color: #FFFFFF; color: #0A013B;">
+            <option value="positivo">Positivo</option>
+            <option value="pregunta">Pregunta</option>
+            <option value="critica">Crítica</option>
+        </select><br><br>
+
+        <button type="button" onclick="generateResponse()" style="background-color: #FFFFFF; color: #0A013B;">Generar respuesta</button>
+    </form>
+    <div id="response" style="margin-top:20px;">
+        <h3>Tu respuesta sugerida:</h3>
+        <p id="generated-response"></p>
+    </div>
+</div>
+
+<script>
+    function generateResponse() {
+        const comment = document.getElementById('comment').value;
+        const responseType = document.getElementById('response-type').value;
+
+        let response = "";
+        if (responseType === "positivo") {
+            response = `Gracias por tu comentario: "${comment}". Apreciamos mucho tu apoyo. ¿Hay algo más que te gustaría compartir con nosotros?`;
+        } else if (responseType === "pregunta") {
+            response = `¡Gracias por tu pregunta! Sobre tu comentario: "${comment}", queremos decirte que estamos aquí para ayudarte. Por favor, ¡déjanos saber cualquier otra duda que tengas!`;
+        } else if (responseType === "critica") {
+            response = `Lamentamos que hayas tenido esta experiencia: "${comment}". Estamos trabajando para mejorar y agradecemos tus comentarios. Si tienes alguna sugerencia específica, ¡nos encantaría escucharla!`;
+        }
+
+        const consejo = "Recuerda siempre tratar cada comentario como una oportunidad para aprender y mejorar. La transparencia y la empatía son claves para construir confianza.";
+        document.getElementById('generated-response').innerText = `${response} ${consejo}`;
+    }
+</script>
