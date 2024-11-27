@@ -1,40 +1,113 @@
-<div style="background-color: #0A013B; color: white; padding: 20px;">
-    <h2>Diseña Respuestas para Comentarios</h2>
-    <p>Responde a los comentarios de tu audiencia de forma ágil y efectiva, con un toque personal que fomente la interacción y construya una comunidad fuerte.</p>
-    <form id="comment-response-form">
-        <label for="comment">Comentario recibido:</label><br>
-        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Escribe un comentario aquí..." style="background-color: #FFFFFF; color: #0A013B;"></textarea><br><br>
-
-        <label for="response-type">Tipo de respuesta:</label><br>
-        <select id="response-type" name="response-type" style="background-color: #FFFFFF; color: #0A013B;">
-            <option value="positivo">Positivo</option>
-            <option value="pregunta">Pregunta</option>
-            <option value="critica">Crítica</option>
-        </select><br><br>
-
-        <button type="button" onclick="generateResponse()" style="background-color: #FFFFFF; color: #0A013B;">Generar respuesta</button>
-    </form>
-    <div id="response" style="margin-top:20px;">
-        <h3>Tu respuesta sugerida:</h3>
-        <p id="generated-response"></p>
-    </div>
-</div>
-
-<script>
-    function generateResponse() {
-        const comment = document.getElementById('comment').value;
-        const responseType = document.getElementById('response-type').value;
-
-        let response = "";
-        if (responseType === "positivo") {
-            response = `Gracias por tu comentario: "${comment}". Apreciamos mucho tu apoyo. ¿Hay algo más que te gustaría compartir con nosotros?`;
-        } else if (responseType === "pregunta") {
-            response = `¡Gracias por tu pregunta! Sobre tu comentario: "${comment}", queremos decirte que estamos aquí para ayudarte. Por favor, ¡déjanos saber cualquier otra duda que tengas!`;
-        } else if (responseType === "critica") {
-            response = `Lamentamos que hayas tenido esta experiencia: "${comment}". Estamos trabajando para mejorar y agradecemos tus comentarios. Si tienes alguna sugerencia específica, ¡nos encantaría escucharla!`;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificador de Contenido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
-
-        const consejo = "Recuerda siempre tratar cada comentario como una oportunidad para aprender y mejorar. La transparencia y la empatía son claves para construir confianza.";
-        document.getElementById('generated-response').innerText = `${response} ${consejo}`;
-    }
-</script>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #160F3D;
+        }
+        .planner {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        .day {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .day h3 {
+            margin: 0 0 10px;
+            color: #160F3D;
+        }
+        .day textarea {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            font-family: Arial, sans-serif;
+        }
+        .day label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-section h2 {
+            color: #160F3D;
+            margin-bottom: 10px;
+        }
+        .cta-section a {
+            display: inline-block;
+            background-color: #00CE5D;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-section a:hover {
+            background-color: #009f49;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Planificador Interactivo de Contenido</h1>
+        <p>
+            Organiza tus publicaciones por semana o mes. Usa este planificador para establecer objetivos, definir hashtags y añadir notas importantes.
+        </p>
+        <div class="planner">
+            <div class="day">
+                <h3>Lunes</h3>
+                <label for="objetivos-lunes">Objetivos</label>
+                <textarea id="objetivos-lunes" placeholder="Escribe tus objetivos aquí..."></textarea>
+                <label for="hashtags-lunes">Hashtags</label>
+                <textarea id="hashtags-lunes" placeholder="Añade hashtags relevantes..."></textarea>
+                <label for="notas-lunes">Notas</label>
+                <textarea id="notas-lunes" placeholder="Escribe notas adicionales..."></textarea>
+            </div>
+            <!-- Repite este bloque para los demás días de la semana -->
+            <div class="day">
+                <h3>Martes</h3>
+                <label for="objetivos-martes">Objetivos</label>
+                <textarea id="objetivos-martes" placeholder="Escribe tus objetivos aquí..."></textarea>
+                <label for="hashtags-martes">Hashtags</label>
+                <textarea id="hashtags-martes" placeholder="Añade hashtags relevantes..."></textarea>
+                <label for="notas-martes">Notas</label>
+                <textarea id="notas-martes" placeholder="Escribe notas adicionales..."></textarea>
+            </div>
+            <!-- Continúa con los días restantes -->
+        </div>
+        <div class="cta-section">
+            <h2>¿CAMPO DE JUEGO O MINA DE ORO?</h2>
+            <a href="https://klicana.work/ykEi0H" target="_blank">QUIERO INSCRIBIRME EN MISIÓN GESTOR REDES SOCIALES</a>
+        </div>
+    </div>
+</body>
+</html>
