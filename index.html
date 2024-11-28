@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planificador de Contenido</title>
+    <title>Calendario de Contenidos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
             color: #333;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -24,7 +24,7 @@
         .planner {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
+            gap: 15px;
         }
         .day {
             background-color: #fff;
@@ -37,9 +37,8 @@
             margin: 0 0 10px;
             color: #160F3D;
         }
-        .day textarea {
+        .day textarea, .day input[type="text"] {
             width: 100%;
-            height: 80px;
             margin-bottom: 10px;
             padding: 10px;
             border: 1px solid #ddd;
@@ -52,61 +51,128 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        .cta-section {
+        .random-bg {
+            background-color: hsl(calc(360 * var(--random)), 80%, 80%);
+        }
+        .objetivos-futuros {
             text-align: center;
             margin-top: 30px;
         }
-        .cta-section h2 {
+        .objetivos-futuros h2 {
             color: #160F3D;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        .cta-section a {
-            display: inline-block;
-            background-color: #00CE5D;
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            font-weight: bold;
+        .objetivos-futuros .objetivos-lista {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .objetivos-futuros .objetivos-lista div {
+            flex: 1;
+            margin: 0 5px;
+        }
+        .objetivos-futuros input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .cta-section a:hover {
-            background-color: #009f49;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Planificador Interactivo de Contenido</h1>
-        <p>
-            Organiza tus publicaciones por semana o mes. Usa este planificador para establecer objetivos, definir hashtags y añadir notas importantes.
-        </p>
+        <h1>Calendario de Contenidos</h1>
+        <p>Organiza tus publicaciones semanalmente. Utiliza este calendario para definir estado, objetivos, audiencias, tipo de contenido, palabras clave y más.</p>
         <div class="planner">
-            <div class="day">
+            <script>
+                // Generar colores aleatorios para cada día
+                function generarColores() {
+                    let dias = document.querySelectorAll('.day');
+                    dias.forEach(function (dia) {
+                        let colorAleatorio = `hsl(${Math.random() * 360}, 80%, 80%)`;
+                        dia.style.backgroundColor = colorAleatorio;
+                    });
+                }
+                document.addEventListener("DOMContentLoaded", generarColores);
+            </script>
+            <div class="day random-bg" style="--random: 0.1">
                 <h3>Lunes</h3>
-                <label for="objetivos-lunes">Objetivos</label>
-                <textarea id="objetivos-lunes" placeholder="Escribe tus objetivos aquí..."></textarea>
+                <label for="fecha-lunes">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-lunes" placeholder="dd/mm/aaaa">
+                <label for="estado-lunes">Estado</label>
+                <textarea id="estado-lunes" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-lunes">Objetivo</label>
+                <textarea id="objetivo-lunes" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-lunes">Público Objetivo</label>
+                <textarea id="publico-lunes" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-lunes">Tipo de Contenido</label>
+                <textarea id="tipo-lunes" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-lunes">Keywords</label>
+                <textarea id="keywords-lunes" placeholder="Escribe palabras clave..."></textarea>
                 <label for="hashtags-lunes">Hashtags</label>
-                <textarea id="hashtags-lunes" placeholder="Añade hashtags relevantes..."></textarea>
+                <textarea id="hashtags-lunes" placeholder="Añade hashtags..."></textarea>
                 <label for="notas-lunes">Notas</label>
                 <textarea id="notas-lunes" placeholder="Escribe notas adicionales..."></textarea>
             </div>
-            <!-- Repite este bloque para los demás días de la semana -->
-            <div class="day">
+            <!-- Repetir este bloque para todos los días de la semana -->
+            <!-- Martes -->
+            <div class="day random-bg" style="--random: 0.2">
                 <h3>Martes</h3>
-                <label for="objetivos-martes">Objetivos</label>
-                <textarea id="objetivos-martes" placeholder="Escribe tus objetivos aquí..."></textarea>
+                <label for="fecha-martes">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-martes" placeholder="dd/mm/aaaa">
+                <label for="estado-martes">Estado</label>
+                <textarea id="estado-martes" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-martes">Objetivo</label>
+                <textarea id="objetivo-martes" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-martes">Público Objetivo</label>
+                <textarea id="publico-martes" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-martes">Tipo de Contenido</label>
+                <textarea id="tipo-martes" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-martes">Keywords</label>
+                <textarea id="keywords-martes" placeholder="Escribe palabras clave..."></textarea>
                 <label for="hashtags-martes">Hashtags</label>
-                <textarea id="hashtags-martes" placeholder="Añade hashtags relevantes..."></textarea>
+                <textarea id="hashtags-martes" placeholder="Añade hashtags..."></textarea>
                 <label for="notas-martes">Notas</label>
                 <textarea id="notas-martes" placeholder="Escribe notas adicionales..."></textarea>
             </div>
-            <!-- Continúa con los días restantes -->
+            <!-- Continúa con Miércoles, Jueves, Viernes, Sábado, Domingo, aplicando el mismo patrón -->
+            <!-- Miércoles -->
+            <div class="day random-bg" style="--random: 0.3">
+                <h3>Miércoles</h3>
+                <!-- contenido igual al de lunes y martes -->
+            </div>
+            <!-- Jueves -->
+            <div class="day random-bg" style="--random: 0.4">
+                <h3>Jueves</h3>
+                <!-- contenido igual al de lunes y martes -->
+            </div>
+            <!-- Viernes -->
+            <div class="day random-bg" style="--random: 0.5">
+                <h3>Viernes</h3>
+                <!-- contenido igual al de lunes y martes -->
+            </div>
+            <!-- Sábado -->
+            <div class="day random-bg" style="--random: 0.6">
+                <h3>Sábado</h3>
+                <!-- contenido igual al de lunes y martes -->
+            </div>
+            <!-- Domingo -->
+            <div class="day random-bg" style="--random: 0.7">
+                <h3>Domingo</h3>
+                <!-- contenido igual al de lunes y martes -->
+            </div>
         </div>
-        <div class="cta-section">
-            <h2>¿CAMPO DE JUEGO O MINA DE ORO?</h2>
-            <a href="https://klicana.work/ykEi0H" target="_blank">QUIERO INSCRIBIRME EN MISIÓN GESTOR REDES SOCIALES</a>
+        <div class="objetivos-futuros">
+            <h2>Objetivos Futuros</h2>
+            <div class="objetivos-lista">
+                <div>1. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>2. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>3. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>4. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>5. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>6. <input type="text" placeholder="Escribe aquí..."></div>
+                <div>7. <input type="text" placeholder="Escribe aquí..."></div>
+            </div>
         </div>
     </div>
 </body>
