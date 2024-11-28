@@ -63,19 +63,39 @@
             margin-bottom: 15px;
         }
         .objetivos-futuros .objetivos-lista {
-            display: flex;
-            justify-content: space-between;
+            display: block;
             padding: 0 20px;
         }
         .objetivos-futuros .objetivos-lista div {
-            flex: 1;
-            margin: 0 5px;
+            margin-bottom: 10px;
         }
         .objetivos-futuros input {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta-section h2 {
+            color: #160F3C;
+            margin-bottom: 10px;
+        }
+        .cta-section a {
+            display: inline-block;
+            background-color: #00CE5D;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta-section a:hover {
+            background-color: #009f49;
         }
     </style>
 </head>
@@ -84,17 +104,7 @@
         <h1>Calendario de Contenidos</h1>
         <p>Organiza tus publicaciones semanalmente. Utiliza este calendario para definir estado, objetivos, audiencias, tipo de contenido, palabras clave y más.</p>
         <div class="planner">
-            <script>
-                // Generar colores aleatorios para cada día
-                function generarColores() {
-                    let dias = document.querySelectorAll('.day');
-                    dias.forEach(function (dia) {
-                        let colorAleatorio = `hsl(${Math.random() * 360}, 80%, 80%)`;
-                        dia.style.backgroundColor = colorAleatorio;
-                    });
-                }
-                document.addEventListener("DOMContentLoaded", generarColores);
-            </script>
+            <!-- Lunes -->
             <div class="day random-bg" style="--random: 0.1">
                 <h3>Lunes</h3>
                 <label for="fecha-lunes">Fecha (dd/mm/aaaa)</label>
@@ -114,7 +124,6 @@
                 <label for="notas-lunes">Notas</label>
                 <textarea id="notas-lunes" placeholder="Escribe notas adicionales..."></textarea>
             </div>
-            <!-- Repetir este bloque para todos los días de la semana -->
             <!-- Martes -->
             <div class="day random-bg" style="--random: 0.2">
                 <h3>Martes</h3>
@@ -135,31 +144,105 @@
                 <label for="notas-martes">Notas</label>
                 <textarea id="notas-martes" placeholder="Escribe notas adicionales..."></textarea>
             </div>
-            <!-- Continúa con Miércoles, Jueves, Viernes, Sábado, Domingo, aplicando el mismo patrón -->
             <!-- Miércoles -->
             <div class="day random-bg" style="--random: 0.3">
                 <h3>Miércoles</h3>
-                <!-- contenido igual al de lunes y martes -->
+                <label for="fecha-miercoles">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-miercoles" placeholder="dd/mm/aaaa">
+                <label for="estado-miercoles">Estado</label>
+                <textarea id="estado-miercoles" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-miercoles">Objetivo</label>
+                <textarea id="objetivo-miercoles" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-miercoles">Público Objetivo</label>
+                <textarea id="publico-miercoles" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-miercoles">Tipo de Contenido</label>
+                <textarea id="tipo-miercoles" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-miercoles">Keywords</label>
+                <textarea id="keywords-miercoles" placeholder="Escribe palabras clave..."></textarea>
+                <label for="hashtags-miercoles">Hashtags</label>
+                <textarea id="hashtags-miercoles" placeholder="Añade hashtags..."></textarea>
+                <label for="notas-miercoles">Notas</label>
+                <textarea id="notas-miercoles" placeholder="Escribe notas adicionales..."></textarea>
             </div>
             <!-- Jueves -->
             <div class="day random-bg" style="--random: 0.4">
                 <h3>Jueves</h3>
-                <!-- contenido igual al de lunes y martes -->
+                <label for="fecha-jueves">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-jueves" placeholder="dd/mm/aaaa">
+                <label for="estado-jueves">Estado</label>
+                <textarea id="estado-jueves" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-jueves">Objetivo</label>
+                <textarea id="objetivo-jueves" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-jueves">Público Objetivo</label>
+                <textarea id="publico-jueves" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-jueves">Tipo de Contenido</label>
+                <textarea id="tipo-jueves" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-jueves">Keywords</label>
+                <textarea id="keywords-jueves" placeholder="Escribe palabras clave..."></textarea>
+                <label for="hashtags-jueves">Hashtags</label>
+                <textarea id="hashtags-jueves" placeholder="Añade hashtags..."></textarea>
+                <label for="notas-jueves">Notas</label>
+                <textarea id="notas-jueves" placeholder="Escribe notas adicionales..."></textarea>
             </div>
             <!-- Viernes -->
             <div class="day random-bg" style="--random: 0.5">
                 <h3>Viernes</h3>
-                <!-- contenido igual al de lunes y martes -->
+                <label for="fecha-viernes">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-viernes" placeholder="dd/mm/aaaa">
+                <label for="estado-viernes">Estado</label>
+                <textarea id="estado-viernes" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-viernes">Objetivo</label>
+                <textarea id="objetivo-viernes" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-viernes">Público Objetivo</label>
+                <textarea id="publico-viernes" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-viernes">Tipo de Contenido</label>
+                <textarea id="tipo-viernes" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-viernes">Keywords</label>
+                <textarea id="keywords-viernes" placeholder="Escribe palabras clave..."></textarea>
+                <label for="hashtags-viernes">Hashtags</label>
+                <textarea id="hashtags-viernes" placeholder="Añade hashtags..."></textarea>
+                <label for="notas-viernes">Notas</label>
+                <textarea id="notas-viernes" placeholder="Escribe notas adicionales..."></textarea>
             </div>
             <!-- Sábado -->
             <div class="day random-bg" style="--random: 0.6">
                 <h3>Sábado</h3>
-                <!-- contenido igual al de lunes y martes -->
+                <label for="fecha-sabado">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-sabado" placeholder="dd/mm/aaaa">
+                <label for="estado-sabado">Estado</label>
+                <textarea id="estado-sabado" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-sabado">Objetivo</label>
+                <textarea id="objetivo-sabado" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-sabado">Público Objetivo</label>
+                <textarea id="publico-sabado" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-sabado">Tipo de Contenido</label>
+                <textarea id="tipo-sabado" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-sabado">Keywords</label>
+                <textarea id="keywords-sabado" placeholder="Escribe palabras clave..."></textarea>
+                <label for="hashtags-sabado">Hashtags</label>
+                <textarea id="hashtags-sabado" placeholder="Añade hashtags..."></textarea>
+                <label for="notas-sabado">Notas</label>
+                <textarea id="notas-sabado" placeholder="Escribe notas adicionales..."></textarea>
             </div>
             <!-- Domingo -->
             <div class="day random-bg" style="--random: 0.7">
                 <h3>Domingo</h3>
-                <!-- contenido igual al de lunes y martes -->
+                <label for="fecha-domingo">Fecha (dd/mm/aaaa)</label>
+                <input type="text" id="fecha-domingo" placeholder="dd/mm/aaaa">
+                <label for="estado-domingo">Estado</label>
+                <textarea id="estado-domingo" placeholder="Escribe el estado..."></textarea>
+                <label for="objetivo-domingo">Objetivo</label>
+                <textarea id="objetivo-domingo" placeholder="Escribe tu objetivo..."></textarea>
+                <label for="publico-domingo">Público Objetivo</label>
+                <textarea id="publico-domingo" placeholder="Describe el público objetivo..."></textarea>
+                <label for="tipo-domingo">Tipo de Contenido</label>
+                <textarea id="tipo-domingo" placeholder="Indica el tipo de contenido..."></textarea>
+                <label for="keywords-domingo">Keywords</label>
+                <textarea id="keywords-domingo" placeholder="Escribe palabras clave..."></textarea>
+                <label for="hashtags-domingo">Hashtags</label>
+                <textarea id="hashtags-domingo" placeholder="Añade hashtags..."></textarea>
+                <label for="notas-domingo">Notas</label>
+                <textarea id="notas-domingo" placeholder="Escribe notas adicionales..."></textarea>
             </div>
         </div>
         <div class="objetivos-futuros">
@@ -173,6 +256,10 @@
                 <div>6. <input type="text" placeholder="Escribe aquí..."></div>
                 <div>7. <input type="text" placeholder="Escribe aquí..."></div>
             </div>
+        </div>
+        <div class="cta-section">
+            <h2>¿CAMPO DE JUEGO O MINA DE ORO?</h2>
+            <a href="https://klicana.work/ykEi0H" target="_blank">INSCRIBIRME AHORA A MISIÓN GESTOR REDES SOCIALES</a>
         </div>
     </div>
 </body>
